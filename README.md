@@ -1,4 +1,7 @@
 # Netflix-Data-Engineering-Project
+![Pipeline Flow](image.png)
+
+
 This project implements a Netflix analytics pipeline using dbt, Snowflake, and AWS.
 
 ##  Overview  
