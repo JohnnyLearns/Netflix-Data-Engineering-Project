@@ -1,0 +1,91 @@
+-- src_genome_score
+{{ config(
+    materialized='view'
+) }}
+
+WITH raw_genome_scores AS (
+    SELECT * FROM MOVIELENS.RAW.RAW_GENOME_SCORES
+)
+
+SELECT 
+    movieId AS movie_id,
+    tagId AS tag_id,
+    relevance
+FROM raw_genome_scores
+
+-- src_genome_tags
+{{ config(
+    materialized='view'
+) }}
+
+WITH raw_genome_tags AS (
+    SELECT * FROM MOVIELENS.RAW.RAW_GENOME_TAGS
+)
+
+SELECT 
+    tagId AS tag_id,
+    tag
+FROM raw_genome_tags
+
+-- src_links
+{{ config(
+    materialized='view'
+) }}
+
+WITH raw_links AS (
+    SELECT * FROM MOVIELENS.RAW.RAW_LINKS
+)
+
+SELECT 
+    movieId AS movie_id,
+    imdbId AS imdb_id,
+    tmdbId AS tmdb_id
+FROM raw_links
+
+-- src_movies
+{{ config(
+    materialized='view'
+) }}
+
+WITH raw_movies AS(
+    SELECT * FROM MOVIELENS.RAW.RAW_MOVIES
+)
+SELECT
+    movieId as movie_id,
+    title,
+    genres
+FROM raw_movies
+
+-- src_ratings
+{{ config(
+    materialized='table'
+) }}
+
+WITH raw_ratings AS (
+    SELECT * FROM MOVIELENS.RAW.RAW_RATINGS
+)
+
+SELECT 
+    userId AS user_id,
+    movieId AS movie_id,
+    rating,
+    TO_TIMESTAMP_LTZ(timestamp) AS rating_timestamp
+FROM raw_ratings
+
+-- src_tags
+{{ config(
+    materialized='table'
+) }}
+
+WITH raw_tags AS (
+    SELECT * FROM MOVIELENS.RAW.RAW_TAGS
+)
+
+SELECT 
+    userId AS user_id,
+    movieId AS movie_id,
+    tag,
+    TO_TIMESTAMP_LTZ(timestamp) AS tag_timestamp
+FROM raw_tags
+
+
