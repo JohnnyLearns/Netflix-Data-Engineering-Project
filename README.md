@@ -15,18 +15,21 @@ This project builds a Netflix analytics pipeline using dbt, Snowflake, and AWS.
   - **Git/GitHub** for version control and documentation
   - 
 ##  Project Structure
+
+```text
 netflix-dbt/
 ├── models/
-│ ├── staging/
-│ ├── dim/
-│ ├── fct/
-│ └── snapshots/
+│   ├── staging/        # source models from raw data
+│   ├── dim/            # dimension tables
+│   ├── fct/            # fact tables
+│   └── snapshots/      # snapshot models
 ├── seeds/
-│ └── genome-tags.csv
+│   └── genome-tags.csv # static CSV seed file
 ├── macros/
-│ └── custom_key.sql
-├── dbt_project.yml
-└── README.md
+│   └── custom_key.sql  # custom macro
+├── dbt_project.yml     # dbt config
+└── README.md           # docs
+```
 
 ##  Learning Outcomes  
 
