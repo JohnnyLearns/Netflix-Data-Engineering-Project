@@ -1,12 +1,7 @@
 # Netflix-Data-Engineering-Project
-
+An end-to-end data engineering project that builds and manages a Netflix analytics pipeline with dbt, Snowflake, and AWS, including data modeling, transformations, and reporting.
 ## Architecture
-
 ![Pipeline Flow](image.png)
-
-
-This project implements a Netflix analytics pipeline using dbt, Snowflake, and AWS.
-
 ##  Overview  
 - **Tutorial-based:** Adapted from a YouTube tutorial on data engineering with dbt, Snowflake, and AWS.  
 - **Pipeline Highlights:**  
@@ -17,7 +12,7 @@ This project implements a Netflix analytics pipeline using dbt, Snowflake, and A
 - **Tech Stack:**  
   - **dbt** for modeling & transformations  
   - **Snowflake** as the data warehouse  
-  - **AWS** (S3) for data storage/processing  
+  - **AWS** for data storage/processing  
   - **Git/GitHub** for version control and documentation
     
 ##  Project Structure
