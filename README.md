@@ -1,4 +1,7 @@
 # Netflix-Data-Engineering-Project
+
+## Architecture
+
 ![Pipeline Flow](image.png)
 
 
@@ -34,7 +37,7 @@ netflix-dbt/
 └── README.md           # docs
 ```
 
-##  Learning Outcomes  
+##  Outcomes  
 
 - **Orchestrated raw-to-dimension modeling** using dbt  
 - **Applied multiple materializations**, including view, table, and snapshot  
